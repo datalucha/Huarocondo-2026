@@ -265,6 +265,110 @@ footer b{color:var(--color-text-muted);}
   table.idx{font-size:12px;}
   .mit-hero{padding:22px 18px;}
 }
+
+/* ===== Síntesis KSS + Matriz (Post Huarocondo) ===== */
+.syn-toggle{background:var(--color-surface-card);border:1px solid var(--color-border);border-radius:var(--radius-card);
+  box-shadow:var(--shadow-card);margin-bottom:12px;overflow:hidden;}
+.syn-thead{display:flex;align-items:center;gap:14px;padding:18px 22px;cursor:pointer;user-select:none;}
+.syn-thead:hover{background:var(--color-hover);}
+.syn-badge{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;
+  border-radius:var(--radius-pill);padding:5px 13px;white-space:nowrap;flex:0 0 auto;}
+.syn-badge.keep{background:var(--green-soft);color:var(--semaforo-verde);}
+.syn-badge.stop{background:var(--magenta-soft);color:var(--lucha-magenta);}
+.syn-badge.start{background:var(--navy-soft);color:var(--lucha-navy);}
+.syn-badge.cross{background:var(--amber-soft);color:#946200;}
+.syn-thead h4{font-size:16px;font-weight:800;color:var(--color-fg);letter-spacing:-0.01em;}
+.syn-thead .syn-sub{font-size:12.5px;color:var(--color-text-muted);font-weight:500;margin-left:auto;text-align:right;}
+.syn-chev{width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;
+  border-top:6px solid var(--color-text-subtle);transition:transform var(--dur) var(--ease-out);flex:0 0 auto;margin-left:4px;}
+.syn-toggle.open .syn-chev{transform:rotate(180deg);}
+.syn-body{max-height:0;overflow:hidden;transition:max-height var(--dur) var(--ease-out);}
+.syn-toggle.open .syn-body{max-height:5000px;}
+.syn-inner{padding:6px 22px 22px;border-top:1px solid var(--color-hairline);}
+.syn-theme{margin-top:16px;}
+.syn-theme .tlab{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--lucha-navy);margin-bottom:9px;}
+.syn-badge.keep ~ *, .syn-theme.keep .tlab{}
+.syn-theme ul{list-style:none;display:flex;flex-direction:column;gap:7px;}
+.syn-theme li{font-size:13.5px;color:var(--color-text-body);padding-left:16px;position:relative;line-height:1.55;font-weight:400;}
+.syn-theme li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--lucha-teal);}
+.syn-theme li b{color:var(--color-fg);font-weight:700;}
+.syn-tension{background:var(--magenta-soft);border-radius:var(--radius-card);padding:14px 18px;margin-top:16px;}
+.syn-tension .tlab{color:var(--lucha-magenta);}
+.syn-tension li::before{background:var(--lucha-magenta);}
+
+/* Matriz 4 cuadrantes */
+.qmatrix{display:grid;grid-template-columns:30px 1fr;grid-template-rows:1fr 30px;gap:10px;margin-top:8px;}
+.qyaxis{grid-column:1;grid-row:1;display:flex;align-items:center;justify-content:center;}
+.qyaxis span{writing-mode:vertical-rl;transform:rotate(180deg);font-size:11px;font-weight:800;
+  text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-subtle);white-space:nowrap;}
+.qxaxis{grid-column:2;grid-row:2;display:flex;align-items:center;justify-content:center;}
+.qxaxis span{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-subtle);}
+.qgrid{grid-column:2;grid-row:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:12px;}
+.quad{border-radius:var(--radius-card-lg);padding:16px 18px;border:1px solid var(--color-border);min-height:150px;
+  display:flex;flex-direction:column;}
+.quad.tr{background:var(--green-soft);border-color:hsl(140 40% 82%);}
+.quad.br{background:var(--navy-soft);border-color:hsl(210 45% 84%);}
+.quad.tl{background:var(--amber-soft);border-color:hsl(43 90% 82%);}
+.quad.bl{background:var(--color-surface-muted);}
+.quad-corner{display:flex;align-items:center;gap:8px;margin-bottom:14px;}
+.quad-tag{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;
+  border-radius:var(--radius-pill);padding:4px 11px;background:rgba(255,255,255,.7);}
+.quad.tr .quad-tag{color:var(--semaforo-verde);}
+.quad.br .quad-tag{color:var(--lucha-navy);}
+.quad.tl .quad-tag{color:#946200;}
+.quad.bl .quad-tag{color:var(--color-text-muted);}
+.quad-hint{font-size:10.5px;color:var(--color-text-subtle);font-weight:600;}
+.pcard-syn{background:#fff;border:1px solid var(--color-border);border-radius:var(--radius-card);
+  padding:13px 15px;box-shadow:var(--shadow-card);margin-bottom:10px;}
+.pcard-syn:last-child{margin-bottom:0;}
+.pcard-syn .pc-top{display:flex;align-items:center;gap:9px;}
+.pc-code{font-size:12px;font-weight:900;color:#fff;background:var(--lucha-dark);border-radius:7px;
+  padding:3px 8px;letter-spacing:.03em;flex:0 0 auto;}
+.pcard-syn.to .pc-code{background:var(--semaforo-verde);}
+.pcard-syn.fc .pc-code{background:var(--lucha-navy);}
+.pcard-syn.mi .pc-code{background:var(--lucha-magenta);}
+.pcard-syn.ct .pc-code{background:#946200;}
+.pcard-syn.mc .pc-code{background:var(--color-text-muted);}
+.pc-name{font-size:14px;font-weight:800;color:var(--color-fg);letter-spacing:-0.01em;}
+.pc-meta{font-size:11.5px;color:var(--color-text-muted);font-weight:500;margin-top:6px;}
+
+/* Detalle de iniciativas */
+.proj-detail{background:var(--color-surface-card);border:1px solid var(--color-border);border-radius:var(--radius-card);
+  box-shadow:var(--shadow-card);padding:18px 20px;margin-bottom:12px;border-left:4px solid var(--lucha-dark);}
+.proj-detail.to{border-left-color:var(--semaforo-verde);}
+.proj-detail.fc{border-left-color:var(--lucha-navy);}
+.proj-detail.mi{border-left-color:var(--lucha-magenta);}
+.proj-detail.ct{border-left-color:#946200;}
+.proj-detail.mc{border-left-color:var(--color-faint);}
+.proj-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:4px;}
+.proj-head .pc-code{font-size:13px;}
+.proj-head h4{font-size:16px;font-weight:800;color:var(--color-fg);letter-spacing:-0.01em;}
+.proj-head .quad-tag{background:var(--color-surface-muted);margin-left:auto;}
+.proj-detail.to .quad-tag{color:var(--semaforo-verde);}
+.proj-detail.fc .quad-tag,.proj-detail.mi .quad-tag{color:var(--lucha-navy);}
+.proj-detail.ct .quad-tag{color:#946200;}
+.proj-detail.mc .quad-tag{color:var(--color-text-muted);}
+.proj-owner{font-size:11.5px;color:var(--color-text-muted);font-weight:500;margin-bottom:12px;}
+.proj-owner b{color:var(--color-fg);font-weight:700;}
+.init-list{list-style:none;display:flex;flex-direction:column;}
+.init-list li{display:flex;align-items:center;gap:11px;padding:9px 0;border-top:1px solid var(--color-hairline);}
+.init-list li:first-child{border-top:none;}
+.icode{font-size:11px;font-weight:800;color:var(--lucha-navy);flex:0 0 40px;letter-spacing:.02em;}
+.itxt{font-size:13.5px;color:var(--color-text-body);font-weight:400;flex:1;line-height:1.4;}
+.pbadge{font-size:10px;font-weight:800;border-radius:var(--radius-pill);padding:3px 9px;flex:0 0 auto;letter-spacing:.03em;}
+.pbadge.p1{background:var(--lucha-magenta);color:#fff;}
+.pbadge.p2{background:var(--amber-soft);color:#946200;}
+.pbadge.p3{background:var(--color-surface-muted);color:var(--color-text-muted);}
+.plegend{display:flex;gap:14px;flex-wrap:wrap;margin-top:6px;font-size:11.5px;color:var(--color-text-muted);font-weight:500;}
+.plegend span{display:inline-flex;align-items:center;gap:6px;}
+
+@media(max-width:860px){
+  .qgrid{grid-template-columns:1fr;grid-template-rows:auto;}
+  .syn-thead .syn-sub{display:none;}
+  .init-list li{flex-wrap:wrap;}
+  .icode{flex-basis:auto;}
+}
+
 </style>
 </head>
 <body>
@@ -978,6 +1082,261 @@ footer b{color:var(--color-text-muted);}
     <p class="note" style="margin-top:14px;">Detalles del incentivo (monto, forma) aún por definir — ver preguntas al final.</p>
   </section>
 
+  <section>
+    <div class="shead"><span class="n">SÍNTESIS</span><h2>Balance del semestre · Keep · Stop · Start</h2>
+      <p>Resultado de la dinámica con los 8 líderes. Toca cada bloque para desplegarlo.</p></div>
+
+    <!-- KEEP -->
+    <div class="syn-toggle" id="syn-keep">
+      <div class="syn-thead">
+        <span class="syn-badge keep">Keep</span>
+        <h4>Lo que funciona y hay que sostener</h4>
+        <span class="syn-sub">6 temáticas</span>
+        <span class="syn-chev"></span>
+      </div>
+      <div class="syn-body"><div class="syn-inner">
+        <div class="syn-theme"><div class="tlab">Cultura y equipo líder</div><ul>
+          <li><b>Cohesión del equipo de liderazgo</b>, la más fuerte hasta ahora, apoyada en los espacios de gobernanza y en transparencia de feedback.</li>
+          <li><b>Cultura luchante como diferencial</b>: horizontalidad, autenticidad, humor, flexibilidad y remote work. Ser "un bicho raro" frente a otros fondos es ventaja.</li>
+          <li><b>Espíritu de alto desempeño</b> ("A-player team") y <b>conexión emocional con el impacto</b> que surge sola (el proceso con Paco).</li>
+        </ul></div>
+        <div class="syn-theme"><div class="tlab">Gobernanza y operación</div><ul>
+          <li><b>Decisiones conjuntas de calidad</b> en el Comité Ejecutivo, con autonomía real de las áreas y <b>quick response time</b> (Chris).</li>
+          <li>Combinación <b>deep dive / zoom out</b>, orden financiero, y sofisticación reciente de gobernanza: cumplimiento, primera auditoría, comités de inversión, vehículo de deuda.</li>
+        </ul></div>
+        <div class="syn-theme"><div class="tlab">Founders, comunidad y alianzas</div><ul>
+          <li><b>Relación única con founders</b> (founder centricity): confianza que se traduce en buenos deals y founders que venden por Lucha.</li>
+          <li>Buen relacionamiento con la comunidad cuando Lucha se activa, y <b>alianzas nuevas potentes</b>: New Ventures, Aurora, Investores, Impacta Bici.</li>
+        </ul></div>
+        <div class="syn-theme"><div class="tlab">Alcance regional <span style="color:var(--color-text-subtle);font-weight:600;">· reclasificado desde Stop</span></div><ul>
+          <li>La <b>desperuanización ya está en marcha</b> y hay que seguir fortaleciéndola: founders y alianzas regionales, branding transversal a LatAm.</li>
+          <li>Profundizar donde aún falta: <b>directorio internacional y aliados internacionales</b> (empuje de Gerardo, inicio con Gabriel Brueta).</li>
+        </ul></div>
+        <div class="syn-theme"><div class="tlab">Marca e innovación</div><ul>
+          <li><b>Imagen de Lucha como diferencial enorme</b>: "si no supiera de qué tamaño son, pensaría que son gigantes" (Fabio, Brasil).</li>
+          <li>Plan de comunicaciones diferenciado, <b>storytelling luchante</b> como metodología propia, e innovación con autoría: propuesta de valor única, instant exits, 25+ ideas originales.</li>
+        </ul></div>
+        <div class="syn-theme"><div class="tlab">Mitosis</div><ul>
+          <li><b>Arranque real de la agentización</b>: de cero Claude a N8N y automatización básica en tres meses. Vamos por el camino correcto.</li>
+        </ul></div>
+      </div></div>
+    </div>
+
+    <!-- STOP -->
+    <div class="syn-toggle" id="syn-stop">
+      <div class="syn-thead">
+        <span class="syn-badge stop">Stop</span>
+        <h4>Lo que hay que soltar o corregir</h4>
+        <span class="syn-sub">Bloque más autocrítico</span>
+        <span class="syn-chev"></span>
+      </div>
+      <div class="syn-body"><div class="syn-inner">
+        <div class="syn-theme"><div class="tlab">Foco y priorización · el tema dominante</div><ul>
+          <li><b>Abrir demasiadas puertas a la vez</b> por miedo a concentrar riesgo → muchas cosas medianamente bien en lugar de una extraordinaria.</li>
+          <li><b>No dimensionar la chamba real</b> ("es fácil, solo tienes que…") y <b>repriorización volátil</b>: quick wins de dos semanas que no acercan a las metas grandes.</li>
+          <li><b>Foco en el método más que en el outcome</b> (caso Liz) y <b>reincidir en actividades que nunca trajeron un dólar</b> de fundraising.</li>
+        </ul></div>
+        <div class="syn-theme"><div class="tlab">Deadlines, reuniones y disciplina</div><ul>
+          <li><b>Deadlines poco realistas</b> que además se <b>evaden sin avisar</b> → estrés en el equipo.</li>
+          <li><b>Reuniones sin pendientes claros ni owners</b>, <b>multiplicidad de herramientas</b> para un mismo objetivo (Slack, WhatsApp, Notion, comités), e <b>impuntualidad</b> como falta de respeto.</li>
+        </ul></div>
+        <div class="syn-theme"><div class="tlab">Velocidad de decisión y ejecución</div><ul>
+          <li><b>Tiempo de respuesta y organización muy extenso</b>, con dificultad para tomar decisiones difíciles (ejemplos: Tappoyo, Avioneta).</li>
+          <li><b>Perfeccionismo como enemigo de lo bueno</b>: demoramos demasiado en salir con un MVP (ejemplos: site de inversionistas, storytelling). <b>Mala gestión del offboarding</b>.</li>
+        </ul></div>
+        <div class="syn-theme"><div class="tlab">Recursos: plata y tiempo</div><ul>
+          <li><b>Lucha cuesta demasiado y la proporción está mal</b> (Mauricio): iniciativas sin retorno que siguen consumiendo presupuesto.</li>
+          <li><b>Exceso de reuniones internas</b> (medido, sin acción) y <b>poco tiempo directo a startups</b> (≈$5K vs. referencia $25–30K): minimizar no es optimizar.</li>
+        </ul></div>
+        <div class="syn-theme"><div class="tlab">Cultura y colaboración</div><ul>
+          <li><b>Sobrecarga de espacios culturales</b>.</li>
+          <li><b>Desalineamiento entre áreas e individualismo</b>: "esto no es mi responsabilidad" cuando Lucha es responsabilidad de todos.</li>
+        </ul></div>
+        <div class="syn-theme"><div class="tlab">Mitosis y comportamiento comercial</div><ul>
+          <li><b>Resistencia interna a Mitosis</b> mayor de la esperada y <b>amplificadores al 5% de su potencial</b>.</li>
+          <li><b>Preferencia por tareas cómodas de gestión</b> sobre las incómodas de generación, y <b>pocos pitches de calidad por semana</b>.</li>
+        </ul></div>
+      </div></div>
+    </div>
+
+    <!-- START -->
+    <div class="syn-toggle" id="syn-start">
+      <div class="syn-thead">
+        <span class="syn-badge start">Start</span>
+        <h4>Lo que hay que empezar en el S2</h4>
+        <span class="syn-sub">Bloque más propositivo</span>
+        <span class="syn-chev"></span>
+      </div>
+      <div class="syn-body"><div class="syn-inner">
+        <div class="syn-theme"><div class="tlab">Nuevo sistema operativo</div><ul>
+          <li><b>Sprints quincenales</b>: dos días al mes de hiperplanificación conjunta que reemplacen los espacios de gobernanza dispersos; Claude vía Slack hace la reportería del sprint.</li>
+          <li><b>Validar iniciativas antes de pedirlas</b> y concentrar en <b>pocas canastas que peguen a los indicadores</b>.</li>
+        </ul></div>
+        <div class="syn-theme"><div class="tlab">Mitosis con estructura</div><ul>
+          <li><b>Acompañamiento experto de largo plazo</b> (tipo How/Axel) enfocado en el outcome, no en el "cómo conecto el MCP".</li>
+          <li><b>Envase estándar de amplificadores</b> replicable para todo Lucha, y <b>sistema integral de incentivos</b> que premie Mitosis y la generación de valor.</li>
+        </ul></div>
+        <div class="syn-theme"><div class="tlab">Talento y capacidades</div><ul>
+          <li><b>Onboarding del talento</b> (agéntico y humano, con Notion AI) y <b>skill building sin presión</b>: feria de ciencias, masterclasses IA, chief of staff por área.</li>
+          <li><b>Transferencia de capacidades a founders</b>: cómo lo hacemos más y cómo lo medimos. <b>Founders como inteligencia colectiva</b>.</li>
+        </ul></div>
+        <div class="syn-theme"><div class="tlab">Knowledge management y espacio</div><ul>
+          <li><b>Base de "proyectos muertos"</b>: cada cierre documentado con un voicenote a Claude para dejar de reincidir.</li>
+          <li><b>Reconfiguración de la oficina</b> para un espacio más productivo.</li>
+        </ul></div>
+        <div class="syn-theme"><div class="tlab">Fundraising, comunicación e ingresos</div><ul>
+          <li><b>Compatibilidad con institucionales</b> y <b>estrategia de comunicación</b> (pauta + comunidad como líderes de opinión).</li>
+          <li><b>Nuevas fuentes de ingresos</b> (dentro de la búsqueda permanente de propuesta de valor única): Impact visualization trips —retiro de founders, historias luchantes con inversionistas viajando, offsites del equipo, con inversionistas pagando para conectar y financiar los espacios—, subarriendo, Comovil, gestión del fondo Orbus.</li>
+        </ul></div>
+        <div class="syn-theme"><div class="tlab">Accountability y colaboración</div><ul>
+          <li><b>"Defensa civil"</b>: los problemas grandes son de todos (ejemplo: la meta que condiciona el desembolso de fin de año no es del Impact Studio, es de Lucha).</li>
+          <li><b>Trabajar más en equipo en proyectos multiáreas</b> y reordenar el seguimiento comunidad–storytelling con carteras y roles.</li>
+        </ul></div>
+      </div></div>
+    </div>
+
+    <!-- CRUZADO -->
+    <div class="syn-toggle" id="syn-cross">
+      <div class="syn-thead">
+        <span class="syn-badge cross">Síntesis cruzada</span>
+        <h4>Las señales que importan entre los tres bloques</h4>
+        <span class="syn-sub">Patrones y tensiones</span>
+        <span class="syn-chev"></span>
+      </div>
+      <div class="syn-body"><div class="syn-inner">
+        <div class="syn-theme"><div class="tlab">Patrones que cruzan Keep · Stop · Start</div><ul>
+          <li><b>Mitosis: la tecnología corre más rápido que la adopción.</b> Se celebra en Keep, se confiesa la resistencia en Stop, y Start trae la respuesta (acompañamiento, envase, incentivos). El problema ya no es de herramientas sino de adopción y estructura.</li>
+          <li><b>Flexibilidad vs. volatilidad, la misma moneda.</b> El quick response time que Keep celebra es la repriorización volátil que Stop critica. El sprint quincenal es el mecanismo que faltaba.</li>
+          <li><b>Creatividad como fortaleza y como riesgo.</b> 25+ ideas con autoría en Keep; multiplicidad de iniciativas como causa #1 del desenfoque en Stop. No falta generación, falta filtro.</li>
+          <li><b>Fundraising: todos los activos, poca actividad.</b> Branding gigante, deseabilidad, alianzas y NPS de inversionistas en 71 en Keep; pocos pitches y preferencia por lo cómodo en Stop. Los números lo confirman (operación 0%, Fondo Luchante 30–40%, deuda sin arrancar). Con la salida de Chris, el gap pasa de importante a crítico.</li>
+          <li><b>Founders: vínculo afectivo fuerte, valor por sistematizar.</b> Cercanía en Keep, tiempo real a startups muy bajo en Stop. Transferir capacidades de forma medible es, además, el numerador del indicador de Mitosis.</li>
+          <li><b>Perfeccionismo vs. velocidad.</b> Choca de frente con la disciplina de MVP que Mitosis necesita: salir rápido y aprender debe volverse norma.</li>
+          <li><b>Gobernanza: institucionalizar hacia afuera, aligerar hacia adentro.</b> Dos movimientos compatibles, no una contradicción.</li>
+          <li><b>Muchos Stops son Starts disfrazados.</b> Reuniones sin owners → sprint planning; multiplicidad de herramientas → consolidación; individualismo → defensa civil; perfeccionismo → cultura de MVP; offboarding → proceso estándar + base de proyectos muertos.</li>
+        </ul></div>
+        <div class="syn-tension"><div class="tlab">Tensiones abiertas por resolver</div><ul>
+          <li><b>Modelo económico de amplificadores</b> (Mauricio: variable que libera carga financiera / contraparte: ancho de banda y seniority con estructura light). Definición #1 para el envase estándar.</li>
+          <li><b>Minimizar vs. optimizar</b> el tiempo dedicado a startups.</li>
+          <li><b>El costo de Lucha</b> vs. la filosofía de crecimiento sobre eficiencia — relevante para formular las restricciones de Mitosis sin optimización engañosa.</li>
+        </ul></div>
+      </div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="shead"><span class="n">PRIORIZACIÓN</span><h2>Matriz de proyectos post-planeamiento</h2>
+      <p>Cinco programas ubicados por impacto y facilidad. Cada uno agrupa sus iniciativas codificadas.</p></div>
+
+    <div class="qmatrix">
+      <div class="qyaxis"><span>Facilidad de implementación &nbsp;↑ más fácil &nbsp;·&nbsp; ↓ más complejo</span></div>
+      <div class="qgrid">
+        <!-- top-left: quick wins -->
+        <div class="quad tl">
+          <div class="quad-corner"><span class="quad-tag">Quick wins</span><span class="quad-hint">menor impacto · fácil</span></div>
+          <div class="pcard-syn ct">
+            <div class="pc-top"><span class="pc-code">CT</span><span class="pc-name">Cultura &amp; Talento</span></div>
+            <div class="pc-meta">3 iniciativas · CT1–CT3 &nbsp;·&nbsp; Nina, Yoel</div>
+          </div>
+        </div>
+        <!-- top-right: hacer ya -->
+        <div class="quad tr">
+          <div class="quad-corner"><span class="quad-tag">Hacer ya</span><span class="quad-hint">alto impacto · fácil</span></div>
+          <div class="pcard-syn to">
+            <div class="pc-top"><span class="pc-code">TO</span><span class="pc-name">Transformación Operativa</span></div>
+            <div class="pc-meta">6 iniciativas · TO1–TO6 &nbsp;·&nbsp; Nacho, Yoel</div>
+          </div>
+        </div>
+        <!-- bottom-left: diseñar después -->
+        <div class="quad bl">
+          <div class="quad-corner"><span class="quad-tag">Diseñar después</span><span class="quad-hint">menor impacto · complejo</span></div>
+          <div class="pcard-syn mc">
+            <div class="pc-top"><span class="pc-code">MC</span><span class="pc-name">Marca &amp; Comunidad</span></div>
+            <div class="pc-meta">2 iniciativas · MC1–MC2 &nbsp;·&nbsp; Rafa, Paloma</div>
+          </div>
+        </div>
+        <!-- bottom-right: apuesta estratégica -->
+        <div class="quad br">
+          <div class="quad-corner"><span class="quad-tag">Apuesta estratégica</span><span class="quad-hint">alto impacto · complejo</span></div>
+          <div class="pcard-syn fc">
+            <div class="pc-top"><span class="pc-code">FC</span><span class="pc-name">Fundraising &amp; Capital</span></div>
+            <div class="pc-meta">4 iniciativas · FC1–FC4 &nbsp;·&nbsp; Chris + Paloma → nuevo socio</div>
+          </div>
+          <div class="pcard-syn mi">
+            <div class="pc-top"><span class="pc-code">MI</span><span class="pc-name">Mitosis Amplificado</span></div>
+            <div class="pc-meta">4 iniciativas · MI1–MI4 &nbsp;·&nbsp; Luchito, Mauricio, Nina</div>
+          </div>
+        </div>
+      </div>
+      <div class="qxaxis"><span>Impacto en el negocio &nbsp;→ &nbsp; menor · izquierda &nbsp; | &nbsp; mayor · derecha</span></div>
+    </div>
+
+    <p class="note">Secuencia sugerida: arrancar <b>TO</b> completo en el primer sprint; abrir en paralelo <b>FC1</b> (nuevo socio) porque su lead time es el más largo y su ausencia la más costosa; tomar los quick wins de <b>CT</b> dentro de los sprints; dejar <b>MC</b> para diseño una vez que Mitosis y fundraising tengan tracción.</p>
+  </section>
+
+  <section>
+    <div class="shead"><span class="n">DETALLE</span><h2>Iniciativas por proyecto</h2>
+      <p>Código, descripción y prioridad. P1 primero.</p></div>
+    <div class="plegend" style="margin-bottom:16px;">
+      <span><span class="pbadge p1">P1</span> Arranca ya / bloqueante</span>
+      <span><span class="pbadge p2">P2</span> Este semestre</span>
+      <span><span class="pbadge p3">P3</span> Cuando haya espacio</span>
+    </div>
+
+    <div class="proj-detail to">
+      <div class="proj-head"><span class="pc-code">TO</span><h4>Transformación Operativa</h4><span class="quad-tag">Hacer ya</span></div>
+      <div class="proj-owner">Owners · <b>Nacho, Yoel</b></div>
+      <ul class="init-list">
+        <li><span class="icode">TO1</span><span class="itxt">Sprints quincenales + reportería con Claude vía Slack</span><span class="pbadge p1">P1</span></li>
+        <li><span class="icode">TO2</span><span class="itxt">Defensa civil / accountability compartido entre áreas</span><span class="pbadge p1">P1</span></li>
+        <li><span class="icode">TO3</span><span class="itxt">Cultura de MVP contra el perfeccionismo</span><span class="pbadge p2">P2</span></li>
+        <li><span class="icode">TO4</span><span class="itxt">Consolidación de herramientas y espacios de gobernanza</span><span class="pbadge p2">P2</span></li>
+        <li><span class="icode">TO5</span><span class="itxt">Proceso estándar de offboarding</span><span class="pbadge p3">P3</span></li>
+        <li><span class="icode">TO6</span><span class="itxt">Racionalizar los espacios culturales</span><span class="pbadge p3">P3</span></li>
+      </ul>
+    </div>
+
+    <div class="proj-detail fc">
+      <div class="proj-head"><span class="pc-code">FC</span><h4>Fundraising &amp; Capital</h4><span class="quad-tag">Apuesta estratégica</span></div>
+      <div class="proj-owner">Owners · <b>Chris + Paloma</b> los próximos 3 meses, luego el <b>nuevo socio</b> · acompañan <b>Nacho y Yoel</b></div>
+      <ul class="init-list">
+        <li><span class="icode">FC1</span><span class="itxt">Nuevo socio de fundraising (transición por salida de Chris ago/sep)</span><span class="pbadge p1">P1</span></li>
+        <li><span class="icode">FC2</span><span class="itxt">Disciplina de pitches semanales de calidad</span><span class="pbadge p1">P1</span></li>
+        <li><span class="icode">FC3</span><span class="itxt">Compatibilidad con inversionistas institucionales</span><span class="pbadge p2">P2</span></li>
+        <li><span class="icode">FC4</span><span class="itxt">Nuevas fuentes de ingresos: Impact trips, fees, gestión Orbus</span><span class="pbadge p2">P2</span></li>
+      </ul>
+    </div>
+
+    <div class="proj-detail mi">
+      <div class="proj-head"><span class="pc-code">MI</span><h4>Mitosis Amplificado</h4><span class="quad-tag">Apuesta estratégica</span></div>
+      <div class="proj-owner">Owners · <b>Luchito, Mauricio, Nina</b></div>
+      <ul class="init-list">
+        <li><span class="icode">MI1</span><span class="itxt">Envase estándar de amplificadores (resolver fijo vs. variable)</span><span class="pbadge p1">P1</span></li>
+        <li><span class="icode">MI2</span><span class="itxt">Acompañamiento experto de Mitosis (tipo How/Axel)</span><span class="pbadge p1">P1</span></li>
+        <li><span class="icode">MI3</span><span class="itxt">Transferencia de capacidades a founders, medible</span><span class="pbadge p2">P2</span></li>
+        <li><span class="icode">MI4</span><span class="itxt">Sistema integral de incentivos</span><span class="pbadge p3">P3</span></li>
+      </ul>
+    </div>
+
+    <div class="proj-detail ct">
+      <div class="proj-head"><span class="pc-code">CT</span><h4>Cultura &amp; Talento</h4><span class="quad-tag">Quick wins</span></div>
+      <div class="proj-owner">Owners · <b>Nina, Yoel</b></div>
+      <ul class="init-list">
+        <li><span class="icode">CT1</span><span class="itxt">Onboarding agéntico + base de proyectos muertos</span><span class="pbadge p2">P2</span></li>
+        <li><span class="icode">CT2</span><span class="itxt">Reconfiguración de la oficina para mayor productividad</span><span class="pbadge p3">P3</span></li>
+        <li><span class="icode">CT3</span><span class="itxt">Feria de ciencias / masterclasses de IA</span><span class="pbadge p3">P3</span></li>
+      </ul>
+    </div>
+
+    <div class="proj-detail mc">
+      <div class="proj-head"><span class="pc-code">MC</span><h4>Marca &amp; Comunidad</h4><span class="quad-tag">Diseñar después</span></div>
+      <div class="proj-owner">Owners · <b>Rafa, Paloma</b></div>
+      <ul class="init-list">
+        <li><span class="icode">MC1</span><span class="itxt">Estrategia de comunicación + nodos/líderes de opinión luchantes</span><span class="pbadge p2">P2</span></li>
+        <li><span class="icode">MC2</span><span class="itxt">Reordenar seguimiento comunidad–storytelling (carteras y roles)</span><span class="pbadge p3">P3</span></li>
+      </ul>
+    </div>
+  </section>
+
 </div>
 
 </div>
@@ -995,6 +1354,11 @@ document.querySelectorAll('.chip-filter[data-tab]').forEach(function(btn){
     btn.classList.add('active');
     document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
     window.scrollTo({top:0, behavior:'instant'});
+  });
+});
+document.querySelectorAll('.syn-thead').forEach(function(head){
+  head.addEventListener('click', function(){
+    head.parentElement.classList.toggle('open');
   });
 });
 </script>
